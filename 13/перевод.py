@@ -1,4 +1,4 @@
-ip = '217.8.244.3'
+ip = '120.91.176.213'
 print(' '.join([bin(int(o))[2:].zfill(8) for o in ip.split('.')]))
-ip = '255.255.252.0'
+ip = '120.91.174.205'
 print(' '.join([bin(int(o))[2:].zfill(8) for o in ip.split('.')]))
