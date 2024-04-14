@@ -6,7 +6,7 @@ data = [list(map(int, line.split())) for line in open('64956.txt').readlines()[1
 data.sort()
 
 # Время в которое окно освободится
-windows = [0] * 10
+windows = {item[2]:0 for item in data}
 lefts = 0
 for start_time, need_time, window in data:
     if start_time + 30 >= windows[window]:
