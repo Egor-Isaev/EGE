@@ -1,9 +1,10 @@
-for a in range(64):
-    f = True
-    for x in range(64):
-        for b in range(24, 91):
-            for c in range(47, 116):
-                if not ((x in c) <= ((not (x in a) and (x in b))) <= not (x in c)):
-                    f = False
-    if f:
-        print(a)
+l = []
+for a_min in range(-200, 200):
+    for a_max in range(-200, 200):
+        f = True
+        for x in range(200):
+            if not ((x in range(47, 115+1)) <= (((not (x in range(a_min, a_max + 1))) and (x in range(24, 90 + 1))) <= (not (x in range(47, 115 + 1))))):
+                f = False
+        if f:
+            l.append(a_max - a_min)
+print(min(l))
