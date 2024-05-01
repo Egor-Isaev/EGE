@@ -7,5 +7,4 @@ for n in range(1, 10000):
         b = '1' + b + '1'
     r = int(b, 2)
     if r > 156:
-        mina = min(r, mina)
-print(mina)
+        print(n)
