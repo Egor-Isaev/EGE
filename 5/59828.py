@@ -1,19 +1,21 @@
 def f(n):
     a = ''
-    while n > 0:
-        a = str(n % 3) + a
-        n //= 3
-    return a
-
-
-m = 10000
-for n in range(1, 1000):
-    a = f(n)
-    if n % 3 == 0:
-        a += a[-3:]
+    if n < 3:
+        return n
     else:
-        a += f(n % 3 * 3)
-    r = int(a, 3)
+        while n > 0:
+            a += str(n % 3)
+            n = n // 3
+        return a[::-1]
+
+minn = 100000
+for n in range(1, 1000):
+    b = str(f(n))
+    if n % 3 == 0:
+        b = b + b[-3:]
+    else:
+        b = b + str(f((n % 3) * 3))
+    r = int(b, 3)
     if r > 150:
-        m = min(n, m)
-print(m)
+        minn = min(n, minn)
+print(minn)

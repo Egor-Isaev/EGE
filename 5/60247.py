@@ -1,13 +1,11 @@
-m=10000
+minn = 100000
 for n in range(1, 1000):
-    a = bin(n)[2:]
+    b = bin(n)[2:]
     if n % 3 == 0:
-        a1 = a + a[-3:]
+        b = b + b[-3:]
     else:
-        v = n % 3
-        b = bin(v * 3)[2:]
-        a1 = a + b
-    r = int(a1, 2)
+        b = b + bin((n % 3) * 3)[2:]
+    r = int(b, 2)
     if r > 151:
-        m = min(r,m)
-print(m)
+        minn = min(r, minn)
+print(minn)
