@@ -1,5 +1,5 @@
-for a in range(1, 1000):
-    for b in range(1, 1000):
+for a in range(1, 400):
+    for b in range(1, 510):
         s = '0' + b * '3' + a * '2' + '0'
         while '00' not in s:
             s = s.replace('033', '1302', 1)
