@@ -1,6 +1,9 @@
-a = open('24_16388.txt').readlines()
-cnt = 0
-for i in range(1, len(a)):
-    if a[i] == 'K' and a[i + 1] == 'L' and a[i + 2] == 'M' and a[i + 3] == 'N':
-        cnt += 1
-print(cnt)
+line = open('16388.txt').readline()
+# KLMN
+error_elements = ['KK', 'LL', 'MM', 'NN', 'LN', 'MK', 'KM', 'NL', 'NM', 'KN']
+
+for elem in error_elements:
+    while elem in line:
+        line = line.replace(elem, f'{elem[0]} {elem[1]}')
+print(len(max(line.split(), key=len)))
+# 182
